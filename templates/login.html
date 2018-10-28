@@ -1,0 +1,13 @@
+<p>TENDRESSE LOGIN TEMPLATE</p>
+<form>
+    <label>
+        <span>Username</span>
+        <input type="text" placeholder="" ng-model="loginForm.username" pattern="^[a-zA-Z0-9_-]{1,39}$" required>
+    </label>
+    <label>
+        <span>Password</span>
+        <input type="password" placeholder="" ng-model="loginForm.password" required>
+    </label>
+    <button ng-click="login()">Login</button>
+    <a ui-sref="signup">Or create an account</a>
+</form>

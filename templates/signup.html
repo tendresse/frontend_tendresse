@@ -1,0 +1,17 @@
+<p>TENDRESSE SIGNUP TEMPLATE</p>
+<form>
+    <label>
+        <span>Username</span>
+        <input type="text" placeholder="" ng-model="signupForm.username" pattern="^[a-zA-Z0-9_-]{1,39}$" required>
+    </label>
+    <label>
+        <span>Email</span>
+        <input type="email" placeholder="" ng-model="signupForm.email" required>
+    </label>
+    <label>
+        <span>Password</span>
+        <input type="password" placeholder="" ng-model="signupForm.password" required>
+    </label>
+    <button ng-click="signup()">Signup</button>
+    <a ui-sref="login">Already have an account ?</a>
+</form>

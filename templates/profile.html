@@ -1,0 +1,20 @@
+<h3>{{ username }}</h3>
+<form>
+    <label>
+    <input type="text" placeholder="your friend's username" ng-model="data.username_friend">
+    </label>
+    <button ng-disabled="data.username_friend.length" ng-click="addFriend()">ADD</button>
+</form>
+<ul>
+    <li ng-show="profile.achievements.length" ng-repeat="achievement in profile.achievements">
+        <img ng-src="/img/achievements/{{achievement.icon}}" onerror="this.src='img/WW04imNRnDkUJx5DkANA_fist.png'">
+        <h2>{{achievement.title}}</h2>
+        <p>{{achievement.type_of}} {{achievement.condition}} #{{achievement.tag.name}} tendresses</p>
+    </li>
+    <li ng-hide="profile.achievements.length">
+        <img src="img/WW04imNRnDkUJx5DkANA_fist.png">
+        <h2>No achievements :( </h2>
+        <p>Spread more tendresse !</p>
+    </li>
+</ul>
+<button ng-click="doRefresh()">REFRESH</button>

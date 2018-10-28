@@ -1,0 +1,27 @@
+<div>
+    <img ng-hide="gifUrl == null" ng-click="nextTendresse()" ng-src="{{ gifUrl }}" width="50%" height="50%" style="display: block; margin-left: auto;">
+</div>
+
+<button ng-click="doRefresh()">REFRESH</button>
+
+Friends
+<ul ng-hide="isEmpty(home)">
+    <li ng-repeat="person in home | toArray:false | orderBy: 'person.tendresses'" ng-class="$index % 2 == '0' ? 'item-assertive' : 'item-dark'">
+        <button ng-click="displayTendresses(person.tendresses)">SEE</button>
+        <button ng-click="sendTendresse('{{person.username}}',$event)">SEND</button>
+        <button ng-click="profile('{{person.username}}')">PROFILE</button>
+        <button ng-hide="person.isFriend">ADD</button>
+        {{person.username}} | {{person.tendresses.length}} tendresses to see
+    </li>
+</ul>
+<ul ng-show="isEmpty(home)">
+    <li>no friends</li>
+</ul>
+
+<!--
+
+le premier de la liste étant la dernière personne a avoir envoyé une tendresse
+
+liste ami + bouton "ajouter ami" + nombre de tendresses à visionner
+
+-->
